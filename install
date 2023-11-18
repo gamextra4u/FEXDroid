@@ -74,7 +74,8 @@ echo " Rootfs installed"
   
   cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/
   
-  wget 
+  wget https://raw.githubusercontent.com/gamextra4u/FEXDroid/main/rootfs
+chmod +x rootfs
   
   
   echo ""
@@ -82,5 +83,6 @@ echo " Scripts installed"
 echo ""
   clear
 echo ""
+sleep 3
 echo " Install finished. To start FEXDroid run 'fexdroid' and type './rootfs' 
 echo ""
