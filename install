@@ -62,7 +62,7 @@ echo " Installing the rootfs, please wait..."
   proot-distro restore ubuntu.tar.xz &>/dev/null
   
   echo ""
-echo " Rootfs installed"
+echo " RootFS installed"
   
   echo ""
   
@@ -83,6 +83,6 @@ echo " Scripts installed"
 echo ""
   clear
 echo ""
-sleep 3
 echo " Install finished. To start FEXDroid run 'fexdroid' and type './rootfs' 
+sleep 3
 echo ""
