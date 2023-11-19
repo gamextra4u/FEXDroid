@@ -34,6 +34,8 @@ clear
 
 echo ""
 
+echo ""
+
 red='\033[0;31m'
 clear='\033[0m'
 echo "${red}WARNING${clear}!!!"
@@ -96,5 +98,5 @@ echo " Scripts installed"
 echo ""
   clear
 echo ""
-echo " Install finished. To start FEXDroid run 'fexdroid' and type './rootfs'"
+echo " Installation finished. To start FEXDroid run 'fexdroid' and type './rootfs'"
   
