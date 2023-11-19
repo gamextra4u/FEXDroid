@@ -61,7 +61,7 @@ done
   echo "removing old Distro"
   
   echo ""
-proot-distro remove ubuntu &>dev/null
+proot-distro remove ubuntu &>/dev/null
   echo ""
   
   sleep 3
