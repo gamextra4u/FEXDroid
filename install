@@ -80,6 +80,7 @@ echo " Installing the rootfs, please wait..."
 echo " Rootfs installed"
   
   sleep 3
+rm  ubuntu.tar.xz
   
   echo " Downloading FEXDroid starting scripts..."
   
