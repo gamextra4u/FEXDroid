@@ -31,7 +31,12 @@ First You Need to Install Termux App and Termux-x11
 3. After start Type "./rootfs" to install ROOTFS for FEX, Without ROOTFS FEX-EMU is useless on ARM64.
 
 ## Usage
-- ( under process)
+- open Termux App Type `fexdroid` to start ubuntu.
+- Type `start &>/dev/null` to start WINE
+- To Close Wine Just press CTRL+c to stop
+- Type `exit` to stop Ubuntu and once again Type `exit`
+- Right Now Force-stop Termux to Stop Termux-x11.
+- I don't know How to kill process of Termux-x11 Right now.
 
 ## Issues
 If you encounter any issues or have suggestions, please [open an issue](https://github.com/gamextra4u/FEXDroid/issues).
