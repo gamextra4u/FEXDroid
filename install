@@ -71,7 +71,7 @@ proot-distro remove ubuntu &>/dev/null
   
 echo "Downloading preconfigured ubuntu..."
 
-wget -q --show-progress https://github.com/gamextra4u/FEXDroid/releases/download/v0.1/ubuntu.tar.xz
+wget -q --show-progress https://github.com/gamextra4u/FEXDroid/releases/download/V0.2/ubuntu.tar.xz
   
 echo " Installing the rootfs, please wait..."
   proot-distro restore ubuntu.tar.xz &>/dev/null
