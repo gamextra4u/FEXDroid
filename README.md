@@ -35,7 +35,7 @@ First You Need to Install Termux App and Termux-x11
 - ( under process)
 
 ## Issues
-If you encounter any issues or have suggestions, please [open an issue](https://github.com/gamextar4u/FEXDroid/issues).
+If you encounter any issues or have suggestions, please [open an issue](https://github.com/gamextra4u/FEXDroid/issues).
 ## License
 I Don't know How to Add Licenses
 But I give Right Anyone to use this project
