@@ -28,7 +28,7 @@ First You Need to Install Termux App and Termux-x11
 1.   Copy This to Termux
  `curl -o install https://raw.githubusercontent.com/gamextra4u/FEXDroid/main/install && chmod +x install && ./install`
 2. After Installation complete Type "fexdroid" to start.
-3. After start Type "./rootfs" to install ROOTFS for FEX, Without ROOTFS FEX-EMU is useless on ARM64.
+3. After start Type `"./rootfs"` to install ROOTFS for FEX, Without ROOTFS FEX-EMU is useless on ARM64.
 
 ## Usage
 - open Termux App Type `fexdroid` to start ubuntu.
