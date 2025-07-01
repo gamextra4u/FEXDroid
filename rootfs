@@ -1,5 +1,4 @@
-#!/bin/sh
-clear
+#!/bin/sh -x
 echo "This Script Install FEX RootFS automatically."
 
 echo ""
@@ -24,7 +23,8 @@ done
  cd ~
   
   echo ""
-  wget -q --show-progress https://rootfs.fex-emu.gg/Ubuntu_23_04/2023-10-01/Ubuntu_23_04.sqsh
+  echo "See https://rootfs.fex-emu.gg/RootFS_links.json if the following file is missing"
+  wget -q --show-progress https://rootfs.fex-emu.gg/Ubuntu_23_04/2023-12-03/Ubuntu_23_04.sqsh
   
   echo "Download complete"
   
@@ -46,9 +46,4 @@ done
   echo ""
   
   echo "Done"
-  
-  sleep 3
-  clear
-  
-  
   

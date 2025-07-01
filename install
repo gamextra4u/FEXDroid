@@ -1,8 +1,8 @@
-#!/bin/bash
+#!/bin/bash -x
 echo ""
 echo "installing ..."
 echo ""
-termux-setup-storage & sleep 5 &>/dev/null
+termux-setup-storage & sleep 5
 pkg update -y
 
 echo ""
@@ -30,7 +30,6 @@ else
   echo "Termux-x11 is not Installed"
 fi
 sleep 1
-clear
 
 echo ""
 
@@ -58,12 +57,10 @@ esac
 
 done
   
-  clear
-  
   echo "removing old Distro"
   
   echo ""
-proot-distro remove ubuntu &>/dev/null
+proot-distro remove ubuntu
   echo ""
   
   sleep 3
@@ -74,13 +71,14 @@ echo "Downloading preconfigured ubuntu..."
 wget -q --show-progress https://github.com/gamextra4u/FEXDroid/releases/download/V0.2/ubuntu.tar.xz
   
 echo " Installing the rootfs, please wait..."
-  proot-distro restore ubuntu.tar.xz &>/dev/null
+  xz -d ubuntu.tar.xz
+  proot-distro restore ubuntu.tar
   
   echo ""
 echo " Rootfs installed"
   
   sleep 3
-rm  ubuntu.tar.xz
+rm  ubuntu.tar
   
   echo " Downloading FEXDroid starting scripts..."
   
@@ -96,8 +94,6 @@ chmod +x rootfs
   
   echo ""
 echo " Scripts installed"
-echo ""
-  clear
 echo ""
 echo " Installation finished. To start FEXDroid run 'fexdroid' and type './rootfs'"
   
