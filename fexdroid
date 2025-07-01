@@ -9,7 +9,7 @@ export XDG_RUNTIME_DIR=${TMPDIR}
 termux-x11 :0 >/dev/null &
 # Wait a bit until termux-x11 gets started.
 sleep 3
-clear
+
 # Login in PRoot Environment. Do some initialization for PulseAudio, /tmp directory
 # and run xfce as user galaxy.
 # See also: https://github.com/termux/proot-distro
