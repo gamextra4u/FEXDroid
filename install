@@ -13,10 +13,10 @@ pkg install x11-repo -y
 
 echo ""
 echo ""
-echo "installing pulseaudio,termux-x11,proot-distro packages"
+echo "installing pulseaudio,termux-x11,proot and qemu-x86_64 packages"
 
 
-if pkg install pulseaudio wget xkeyboard-config proot-distro -y
+if pkg install pulseaudio wget xkeyboard-config proot qemu-user-x86-64 -y
 then
   echo "Aditional packages is installed"
 else
@@ -36,68 +36,32 @@ echo ""
 
 echo ""
 
-red='\033[0;31m'
-clear='\033[0m'
-echo "${red}WARNING${clear}!!!"
-
-echo "By Installing This Setup Your old Distro is Removed"
-
-echo "If you Have 'Box64droid' or Any Ubuntu Installed Don't  Install it!"
-
-while true; do
-
-read -p "Do you want to proceed? (y/n) " yn
-
-case $yn in 
-	[yY] ) echo ok, we will proceed;
-		break;;
-	[nN] ) echo exiting...;
-		exit;;
-	* ) echo invalid response;;
-esac
-
-done
-  
-  clear
-  
-  echo "removing old Distro"
-  
-  echo ""
-proot-distro remove ubuntu &>/dev/null
-  echo ""
-  
-  sleep 3
-
   
 echo "Downloading preconfigured ubuntu..."
 
 wget -q --show-progress https://github.com/gamextra4u/FEXDroid/releases/download/V0.2/ubuntu.tar.xz
   
 echo " Installing the rootfs, please wait..."
-  proot-distro restore ubuntu.tar.xz &>/dev/null
+  cd ~ 
+tar -xzvf FEXDroid.tar.gz &>/dev/null
   
   echo ""
 echo " Rootfs installed"
   
   sleep 3
-rm  ubuntu.tar.xz
+rm  FEXDroid.tar.gz
   
-  echo " Downloading FEXDroid starting scripts..."
+  echo " Downloading FEXDroid launch script..."
   
   cd ~
   wget https://raw.githubusercontent.com/gamextra4u/FEXDroid/v0.1/fexdroid
   chmod +x fexdroid
   mv fexdroid $PREFIX/bin/fexdroid
   
-  cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/
-  
-  wget https://raw.githubusercontent.com/gamextra4u/FEXDroid/main/rootfs
-chmod +x rootfs
-  
   echo ""
 echo " Scripts installed"
 echo ""
   clear
 echo ""
-echo " Installation finished. To start FEXDroid run 'fexdroid' and type './rootfs'"
+echo " Installation finished. To start FEXDroid run `fexdroid` "
   
