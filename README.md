@@ -8,35 +8,38 @@ WELCOME to FEXDroid by GameXtra4u
 ## Overview
 This project aims to bring 'FEX-Emu' a fantastic emulator of X86_64 to the Android platform. 
 
-FEXDroid is Similar to Box64droid.
-Box64droid is using box64 to run pc programs.
-But FEXDroid is using FEX to Emulate Pc programs.
+FEXDroid is using proot and x86_64 RootFS to Emulate X86_64 on Arm64 Device.
+
 ## Features
 - Turnip-zink ( mesa 23.2.1 by default)
-- only for Proot 
-- wine 8.0.2 included 
+- RootFS updated to Ubuntu24_04
+- FEX-EMU Version :- 2506
+- Install Any packages using Qemu Option.
 
 ## Getting Started
 First You Need to Install Termux App and Termux-x11
 
 ### Prerequisites
-- Termux
--Termux-x11
-- size around 8gb
+
+- [Termux with inbuilt termux-x11.](https://github.com/jiaxinchen-max/termux-app)
+
+- total 2gb free space Required.
 
 ### Installation
 1.   Copy This to Termux
- `curl -o install https://raw.githubusercontent.com/gamextra4u/FEXDroid/main/install && chmod +x install && ./install`
-2. After Installation complete Type "fexdroid" to start.
-3. After start Type `"./rootfs"` to install ROOTFS for FEX, Without ROOTFS FEX-EMU is useless on ARM64.
+ `curl -o install https://raw.githubusercontent.com/gamextra4u/FEXDroid/refs/heads/gamextra4u-patch-1/install && chmod +x install && ./install`
+2. After Installation complete Type `fexdroid` to start.
+3. Select option 2 for run RootFS with FEX.
 
 ## Usage
-- open Termux App Type `fexdroid` to start ubuntu.
-- Type `start &>/dev/null` to start WINE
-- To Close Wine Just press CTRL+c to stop
-- Type `exit` to stop Ubuntu and once again Type `exit`
-- Right Now Force-stop Termux to Stop Termux-x11.
-- I don't know How to kill process of Termux-x11 Right now.
+- open Termux App Type `fexdroid` to start ubuntu
+- select option 1 to launch RootFS using Qemu.
+- select option 2 for launch RootFS using FEX.
+- QEMU is for installing or removing packages
+- Run Any x86_64 program using option 2 .
+
+Note :- Do Not install any program using option 2 (FEX) 🚫 
+
 
 ## Issues
 If you encounter any issues or have suggestions, please [open an issue](https://github.com/gamextra4u/FEXDroid/issues).

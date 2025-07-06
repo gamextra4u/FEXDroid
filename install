@@ -13,10 +13,10 @@ pkg install x11-repo -y
 
 echo ""
 echo ""
-echo "installing pulseaudio,termux-x11,proot-distro packages"
+echo "installing pulseaudio,termux-x11,proot and qemu-x86_64 packages"
 
 
-if pkg install pulseaudio wget xkeyboard-config proot-distro -y
+if pkg install pulseaudio wget xkeyboard-config proot qemu-user-x86-64 -y
 then
   echo "Aditional packages is installed"
 else
@@ -36,68 +36,40 @@ echo ""
 
 echo ""
 
-red='\033[0;31m'
-clear='\033[0m'
-echo "${red}WARNING${clear}!!!"
+  cd ~
+ROOTFS_DIR="FEXDroid"
+ROOTFS_LINK="https://github.com/gamextra4u/FEXDroid/releases/download/v1.0/FEXDroid.tar.gz"  
+ROOTFS_ARCHIVE="FEXDroid.tar.gz"
 
-echo "By Installing This Setup Your old Distro is Removed"
+# Check if FEXDroid folder already exists
+if [ -d "$ROOTFS_DIR" ]; then
+    echo "[✔] $ROOTFS_DIR already exists. Skipping download."
+else
+    echo "[⏬] Downloading Ubuntu rootfs..."
+    wget -q --show-progress "$ROOTFS_LINK"  || { echo "[✖] Download failed!"; exit 1; }
 
-echo "If you Have 'Box64droid' or Any Ubuntu Installed Don't  Install it!"
+    echo "[📦] Extracting rootfs to $ROOTFS_DIR..."
+   tar -xzvf FEXDroid.tar.gz &>/dev/null  || { echo "[✖] Extraction failed!"; exit 1; }
+    rm "$ROOTFS_ARCHIVE"
+    echo "[✅] Rootfs ready in $ROOTFS_DIR"
+fi
 
-while true; do
-
-read -p "Do you want to proceed? (y/n) " yn
-
-case $yn in 
-	[yY] ) echo ok, we will proceed;
-		break;;
-	[nN] ) echo exiting...;
-		exit;;
-	* ) echo invalid response;;
-esac
-
-done
-  
-  clear
-  
-  echo "removing old Distro"
-  
-  echo ""
-proot-distro remove ubuntu &>/dev/null
-  echo ""
-  
-  sleep 3
-
-  
-echo "Downloading preconfigured ubuntu..."
-
-wget -q --show-progress https://github.com/gamextra4u/FEXDroid/releases/download/V0.2/ubuntu.tar.xz
-  
-echo " Installing the rootfs, please wait..."
-  proot-distro restore ubuntu.tar.xz &>/dev/null
-  
   echo ""
 echo " Rootfs installed"
   
   sleep 3
-rm  ubuntu.tar.xz
-  
-  echo " Downloading FEXDroid starting scripts..."
+
+  echo " Downloading FEXDroid launch script..."
   
   cd ~
-  wget https://raw.githubusercontent.com/gamextra4u/FEXDroid/v0.1/fexdroid
+  wget https://raw.githubusercontent.com/gamextra4u/FEXDroid/refs/heads/gamextra4u-patch-1/fexdroid
   chmod +x fexdroid
   mv fexdroid $PREFIX/bin/fexdroid
-  
-  cd /data/data/com.termux/files/usr/var/lib/proot-distro/installed-rootfs/ubuntu/root/
-  
-  wget https://raw.githubusercontent.com/gamextra4u/FEXDroid/main/rootfs
-chmod +x rootfs
   
   echo ""
 echo " Scripts installed"
 echo ""
   clear
 echo ""
-echo " Installation finished. To start FEXDroid run 'fexdroid' and type './rootfs'"
+echo " Installation finished. To start FEXDroid type "fexdroid" "
   
