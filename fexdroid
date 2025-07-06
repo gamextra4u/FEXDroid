@@ -10,5 +10,7 @@ termux-x11 :0 >/dev/null &
 # Wait a bit until termux-x11 gets started.
 sleep 3
 clear
-$HOME/FEXDroid/start.sh
+
+cd ~/FEXDroid
+./start.sh
 exit 0
