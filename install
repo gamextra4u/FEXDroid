@@ -49,9 +49,7 @@ tar -xzvf FEXDroid.tar.gz &>/dev/null
 echo " Rootfs installed"
   
   sleep 3
-rm  FEXDroid.tar.gz
-mv ~/FEXDroid/start.sh $PREFIX/bin
-  
+
   echo " Downloading FEXDroid launch script..."
   
   cd ~
