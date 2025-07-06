@@ -13,4 +13,4 @@ clear
 
 cd ~/FEXDroid
 ./start.sh
-exit 0
+pkill app_process
