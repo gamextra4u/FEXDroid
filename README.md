@@ -20,8 +20,9 @@ FEXDroid is using proot and x86_64 RootFS to Emulate X86_64 on Arm64 Device.
 First You Need to Install Termux App and Termux-x11
 
 ### Prerequisites
-- Termux
--Termux-x11
+- `https://github.com/jiaxinchen-max/termux-app`
+install Termux with inbuilt termux-x11.
+
 - size 1gb
 
 ### Installation
