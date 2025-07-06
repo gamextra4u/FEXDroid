@@ -36,15 +36,24 @@ echo ""
 
 echo ""
 
-  
-echo "Downloading preconfigured ubuntu..."
+  cd ~
+ROOTFS_DIR="FEXDroid"
+ROOTFS_LINK="https://github.com/gamextra4u/FEXDroid/releases/download/v1.0/FEXDroid.tar.gz"  
+ROOTFS_ARCHIVE="FEXDroid.tar.gz"
 
-wget -q --show-progress https://github.com/gamextra4u/FEXDroid/releases/download/v1.0/FEXDroid.tar.gz
-  
-echo " Installing the rootfs, please wait..."
-  cd ~ 
-tar -xzvf FEXDroid.tar.gz &>/dev/null
-  
+# Check if FEXDroid folder already exists
+if [ -d "$ROOTFS_DIR" ]; then
+    echo "[✔] $ROOTFS_DIR already exists. Skipping download."
+else
+    echo "[⏬] Downloading Ubuntu rootfs..."
+    wget -q --show-progress "$ROOTFS_LINK"  || { echo "[✖] Download failed!"; exit 1; }
+
+    echo "[📦] Extracting rootfs to $ROOTFS_DIR..."
+   tar -xzvf FEXDroid.tar.gz &>/dev/null  || { echo "[✖] Extraction failed!"; exit 1; }
+    rm "$ROOTFS_ARCHIVE"
+    echo "[✅] Rootfs ready in $ROOTFS_DIR"
+fi
+
   echo ""
 echo " Rootfs installed"
   
