@@ -71,5 +71,5 @@ echo " Scripts installed"
 echo ""
   clear
 echo ""
-echo " Installation finished. To start FEXDroid run `fexdroid` "
+echo " Installation finished. To start FEXDroid type "fexdroid" "
   
