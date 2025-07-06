@@ -60,7 +60,7 @@ echo " Rootfs installed"
   sleep 3
 
   echo " Downloading FEXDroid launch script..."
-  
+  rm $PREFIX/bin/fexdroid
   cd ~
   wget https://raw.githubusercontent.com/gamextra4u/FEXDroid/refs/heads/gamextra4u-patch-1/fexdroid
   chmod +x fexdroid
