@@ -8,13 +8,13 @@ WELCOME to FEXDroid by GameXtra4u
 ## Overview
 This project aims to bring 'FEX-Emu' a fantastic emulator of X86_64 to the Android platform. 
 
-FEXDroid is Similar to Box64droid.
-Box64droid is using box64 to run pc programs.
-But FEXDroid is using FEX to Emulate Pc programs.
+FEXDroid is using proot and x86_64 RootFS to Emulate X86_64 on Arm64 Device.
+
 ## Features
 - Turnip-zink ( mesa 23.2.1 by default)
-- only for Proot 
-- wine 8.0.2 included 
+- RootFS updated to Ubuntu24_04
+- FEX-EMU Version :- 2506
+- Install Any packages using Qemu Option.
 
 ## Getting Started
 First You Need to Install Termux App and Termux-x11
@@ -22,13 +22,13 @@ First You Need to Install Termux App and Termux-x11
 ### Prerequisites
 - Termux
 -Termux-x11
-- size around 8gb
+- size 1gb
 
 ### Installation
 1.   Copy This to Termux
  `curl -o install https://raw.githubusercontent.com/gamextra4u/FEXDroid/main/install && chmod +x install && ./install`
-2. After Installation complete Type "fexdroid" to start.
-3. After start Type `"./rootfs"` to install ROOTFS for FEX, Without ROOTFS FEX-EMU is useless on ARM64.
+2. After Installation complete Type `fexdroid` to start.
+3. Select option 2 for run RootFS with FEX.
 
 ## Usage
 - open Termux App Type `fexdroid` to start ubuntu.
