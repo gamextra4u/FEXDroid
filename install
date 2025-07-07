@@ -13,15 +13,21 @@ pkg install x11-repo -y
 
 echo ""
 echo ""
-echo "installing pulseaudio,termux-x11,proot and qemu-x86_64 packages"
+echo "installing pulseaudio,termux-x11,proot packages"
 
 
-if pkg install pulseaudio wget xkeyboard-config proot qemu-user-x86-64 -y
+if pkg install pulseaudio wget xkeyboard-config proot -y
 then
   echo "Aditional packages is installed"
 else
   echo "Aditional packages installation is failed"
 fi
+
+echo " Downloading and installing Qemu"
+cd ~
+wget https://github.com/gamextra4u/FEXDroid/raw/refs/heads/main/qemu-x86_64
+chmod +x qemu-x86_64
+mv ~/qemu-x86_64 $PREFIX/bin
 
 if pkg install termux-x11-nightly -y & sleep 10
 then
@@ -60,7 +66,7 @@ echo " Rootfs installed"
   sleep 3
 
   echo " Downloading FEXDroid launch script..."
-  rm $PREFIX/bin/fexdroid
+  
   cd ~
   wget https://raw.githubusercontent.com/gamextra4u/FEXDroid/refs/heads/gamextra4u-patch-1/fexdroid
   chmod +x fexdroid
