@@ -11,7 +11,7 @@ FEXDroid is using proot and x86_64 RootFS to Emulate X86_64 on Arm64 Device.
 
 ## Features
 - Turnip-zink ( mesa 23.2.1 by default)
-- RootFS updated to Ubuntu24_04
+- RootFS updated to Ubuntu24_04 X86_64
 - FEX-EMU Version :- 2506
 - Install Any packages using Qemu Option.
 
@@ -45,8 +45,3 @@ If you encounter any issues or have suggestions, please [open an issue](https://
 ## License
 I Don't know How to Add Licenses
 But I give Right Anyone to use this project
-
-## Acknowledgments
-- This Project is Inspired by Box64droid .
-
-- AkiraYuki YouTuber is also My Inspiration to make this Project.
