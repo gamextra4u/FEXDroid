@@ -7,7 +7,7 @@ WELCOME to FEXDroid by GameXtra4u
 
 ## Overview
 
-FEXDroid is using proot and x86_64 RootFS to Emulate X86_64 on Arm64 Device.
+FEXDroid is using proot and Fex-Emu to Emulate X86_64 RootFS on Android Arm64 Device.
 
 ## Features
 - Turnip-zink ( mesa 23.2.1 by default)
