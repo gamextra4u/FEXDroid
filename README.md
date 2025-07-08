@@ -6,7 +6,6 @@ WELCOME to FEXDroid by GameXtra4u
 # FEX-Emu on Android
 
 ## Overview
-This project aims to bring 'FEX-Emu' a fantastic emulator of X86_64 to the Android platform. 
 
 FEXDroid is using proot and x86_64 RootFS to Emulate X86_64 on Arm64 Device.
 
