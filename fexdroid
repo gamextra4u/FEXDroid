@@ -6,11 +6,18 @@ pulseaudio --start --load="module-native-protocol-tcp auth-ip-acl=127.0.0.1 auth
 # Prepare termux-x11 session
 export DISPLAY=:0
 export XDG_RUNTIME_DIR=${TMPDIR}
+export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/freedreno_icd.aarch64.json"
 termux-x11 :0 >/dev/null &
 # Wait a bit until termux-x11 gets started.
 sleep 3
 clear
 
+rm ~/FEXDroid/ubuntu-fs/lib/x86_64-linux-gnu/libvulkan.so.1
+
+ln -s ~/FEXDroid/ubuntu-fs/usr/share/fex-emu/GuestThunks/libvulkan-guest.so ~/FEXDroid/ubuntu-fs/lib/libvulkan.so.1
+
 cd ~/FEXDroid
+
 ./start.sh
+pkill termux-x11
 pkill app_process
