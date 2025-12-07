@@ -12,9 +12,21 @@ termux-x11 :0 >/dev/null &
 sleep 3
 clear
 
-rm ~/FEXDroid/ubuntu-fs/lib/x86_64-linux-gnu/libvulkan.so.1
+# Run Vulkan patch only if symlink does NOT exist
+SYMLINK=~/FEXDroid/ubuntu-fs/lib/libvulkan.so.1
 
-ln -s ~/FEXDroid/ubuntu-fs/usr/share/fex-emu/GuestThunks/libvulkan-guest.so ~/FEXDroid/ubuntu-fs/lib/libvulkan.so.1
+if [ ! -L "$SYMLINK" ]; then
+    echo "Creating Vulkan symlink..."
+
+    rm -f ~/FEXDroid/ubuntu-fs/lib/x86_64-linux-gnu/libvulkan.so.1
+
+    ln -sf ~/FEXDroid/ubuntu-fs/usr/share/fex-emu/GuestThunks/libvulkan-guest.so \
+          "$SYMLINK"
+
+    echo "Symlink created."
+else
+    echo "Vulkan symlink already exists, skipping..."
+fi
 
 cd ~/FEXDroid
 
