@@ -75,6 +75,26 @@ echo " Rootfs installed"
   echo ""
 echo " Scripts installed"
 echo ""
+
+echo ""
+echo "Replacing Vulkan freedreno library..."
+
+VULKAN_URL="https://github.com/gamextra4u/FEXDroid/raw/refs/heads/main/libvulkan_freedreno.so"
+DEST_DIR=~/FEXDroid/ubuntu-fs/lib/aarch64-linux-gnu
+DEST_FILE="$DEST_DIR/libvulkan_freedreno.so"
+
+
+# Remove old file if exists
+rm -f "$DEST_FILE"
+
+# Download new file with SAME NAME
+wget -q --show-progress "$VULKAN_URL" -O "$DEST_FILE" || { 
+    echo "[✖] Vulkan freedreno library download failed!"; 
+    exit 1; 
+}
+
+chmod 644 "$DEST_FILE"
+echo "[✅] Vulkan freedreno library replaced successfully."
   clear
 echo ""
 echo " Installation finished. To start FEXDroid type "fexdroid" "
