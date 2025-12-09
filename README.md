@@ -31,6 +31,10 @@ First You Need to Install Termux App and Termux-x11
 2. After Installation complete Type `fexdroid` to start.
 3. Select option 2 for run RootFS with FEX.
 
+### Update Fex-Emu Version
+Copy and Paste it in Termux to Update Fex-Emu to 2512 version.
+`curl -o update https://raw.githubusercontent.com/gamextra4u/FEXDroid/refs/heads/gamextra4u-patch-1/update-fex.sh && chmod +x update && ./update`
+
 ## Usage
 - open Termux App Type `fexdroid` to start ubuntu
 - select option 1 to launch RootFS using Qemu.
