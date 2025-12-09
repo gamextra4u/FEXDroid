@@ -11,7 +11,7 @@ This project aims to bring 'FEX-Emu' a fantastic emulator of X86_64 to the Andro
 FEXDroid is using proot and x86_64 RootFS to Emulate X86_64 on Arm64 Device.
 
 ## Features
-- Turnip-zink ( mesa 23.2.1 by default)
+- Turnip-zink ( mesa 24.0.0 by default)
 - RootFS updated to Ubuntu24_04
 - FEX-EMU Version :- 2506
 - Install Any packages using Qemu Option.
